@@ -1,7 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const department = require('./controllers/product');
+
+router.get('/', (req, res, next) => {
+    res.status(404);
+    res.json({
+        message:"API5 is working"
+    });
+});
 
 // Simulate a book database (replace with actual database interaction)
 let books = [
@@ -9,11 +15,13 @@ let books = [
     { id: 2, title: 'Book 2', author: 'Author 2' },
   ];
   
-  // Vulnerable API endpoints (Broken Authorization)
+// Vulnerable API endpoints (Broken Authorization)
 router.get('/books', (req, res) => {
     res.send(books);
 });
-  
+
+
+// Must be protected with JWT auth process  (check-auth middleware) 
 router.post('/books', (req, res) => {
     const newBook = req.body;
     books.push(newBook); // Add book without authorization check!
