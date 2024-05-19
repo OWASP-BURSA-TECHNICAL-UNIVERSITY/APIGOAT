@@ -17,20 +17,22 @@
 </head>
 
 <body>
-  <h1>APIGOAT</h1>
-  <hr>
+
   <div class="container-fluid">
     <div class="row">
+
+
       <div class="col-3 px-3 bg-light position-fixed" id="sticky-sidebar">
+        <img style="max-width: 100%" src="/logo" alt="apigoat"> 
         <nav>
-          <a href="#OWASP10_2023" data-toggle="collapse" aria-expanded="false" id="owasp10_2023"
+          <a href="/" aria-expanded="false" id="owasp10_2023"
             style="padding: 20% 10% 10 10">
             <i class="fas fa-flag"></i>
-            OWASP API TOP 10 2023
+            OWASP API TOP 10 2018
           </a>
-
-
-          <ul id="OWASP10_2023">
+  
+  
+          <ul class="list-sidebar bg-default" id="OWASP10_2023">
             <li>
               <a href="api1" class="sidebar-list-items">
                 <i class="fas fa-bug"></i>
@@ -90,10 +92,12 @@
                 <i class="fas fa-bug"></i>
                 API10:<br> Unsafe Consumption of APIs
               </a>
-
+  
           </ul>
         </nav>
       </div>
+
+
       <div class="col offset-3" id="main">
         <h1>API3:2023 - Broken Object Property Level Authorization</h1>
         <hr>
@@ -141,12 +145,20 @@
         </div>
 
         <div class="container-fluid bg-light">
-          <h5>Mitigation:</h5>
-          <p>
-            The API endpoint should implement authorization checks on individual properties within the user object.
-            It should only return properties that the requesting user has permission to access. In this case, the
-            "isAdmin" property should be omitted from the response for non-admin users.
-          </p>
+          <h2>Mitigation</h2>
+          <hr>
+          <ul>
+            <li>
+              <p>
+                The API endpoint should implement authorization checks on individual properties within the user object.
+              </p>
+            </li>
+            <li>
+              <p>
+                It should only return properties that the requesting user has permission to access. In this case, the "isAdmin" property should be omitted from the response for non-admin users.
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

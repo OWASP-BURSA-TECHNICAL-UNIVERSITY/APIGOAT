@@ -17,84 +17,85 @@
 </head>
 
 <body>
-  <h1>APIGOAT</h1>
-  <hr>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-3 px-3 bg-light position-fixed" id="sticky-sidebar">
-        <nav>
-          <a href="#OWASP10_2023" data-toggle="collapse" aria-expanded="false" id="owasp10_2023"
-            style="padding: 20% 10% 10 10">
-            <i class="fas fa-flag"></i>
-            OWASP API TOP 10 2023
-          </a>
 
 
-          <ul id="OWASP10_2023">
-            <li>
-              <a href="api1" class="sidebar-list-items">
-                <i class="fas fa-bug"></i>
-                API1:<br> Broken Object Level Authorization
-              </a>
-            </li>
-            <li>
-              <a href="api2" class="sidebar-list-items">
-                <i class="fas fa-bug"></i>
-                API2:<br> Broken Authentication
-              </a>
-            </li>
-            <li>
-              <a href="/api3" class="sidebar-list-items">
-                <i class="fas fa-bug"></i>
-                API3:<br> Broken Object Property Level Authorization
-              </a>
-            </li>
-            <li>
-              <a href="/api4" class="sidebar-list-items">
-                <i class="fas fa-bug"></i>
-                API4<br>: Unrestricted Resource Consumption
-              </a>
-            </li>
-            <li>
-              <a href="/api5" class="sidebar-list-items">
-                <i class="fas fa-bug"></i>
-                API5:<br> Broken Function Level Authorization
-              </a>
-            </li>
-            <li>
-              <a href="/api6" class="sidebar-list-items">
-                <i class="fas fa-bug"></i>
-                API6:<br> Broken Function Level Authorization
-              </a>
-            </li>
-            <li>
-              <a href="/api7" class="sidebar-list-items">
-                <i class="fas fa-bug"></i>
-                API7:<br> Server-Side Request Forgery
-              </a>
-            </li>
-            <li>
-              <a href="/api8" class="sidebar-list-items">
-                <i class="fas fa-bug"></i>
-                API8:<br> Security Misconfiguration
-              </a>
-            </li>
-            <li>
-              <a href="/api9" class="sidebar-list-items">
-                <i class="fas fa-bug"></i>
-                API9:<br> Improper Inventory Management
-              </a>
-            </li>
-            <li>
-              <a href="/api10" class="sidebar-list-items">
-                <i class="fas fa-bug"></i>
-                API10:<br> Unsafe Consumption of APIs
-              </a>
 
-          </ul>
-        </nav>
-      </div>
+           <div class="col-3 px-3 bg-light position-fixed" id="sticky-sidebar">
+      <img style="max-width: 100%" src="/logo" alt="apigoat"> 
+      <nav>
+        <a href="/" aria-expanded="false" id="owasp10_2023"
+          style="padding: 20% 10% 10 10">
+          <i class="fas fa-flag"></i>
+          OWASP API TOP 10 2023
+        </a>
 
+
+        <ul class="list-sidebar bg-default" id="OWASP10_2023">
+          <li>
+            <a href="api1" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API1:<br> Broken Object Level Authorization
+            </a>
+          </li>
+          <li>
+            <a href="api2" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API2:<br> Broken Authentication
+            </a>
+          </li>
+          <li>
+            <a href="/api3" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API3:<br> Broken Object Property Level Authorization
+            </a>
+          </li>
+          <li>
+            <a href="/api4" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API4<br>: Unrestricted Resource Consumption
+            </a>
+          </li>
+          <li>
+            <a href="/api5" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API5:<br> Broken Function Level Authorization
+            </a>
+          </li>
+          <li>
+            <a href="/api6" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API6:<br> Broken Function Level Authorization
+            </a>
+          </li>
+          <li>
+            <a href="/api7" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API7:<br> Server-Side Request Forgery
+            </a>
+          </li>
+          <li>
+            <a href="/api8" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API8:<br> Security Misconfiguration
+            </a>
+          </li>
+          <li>
+            <a href="/api9" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API9:<br> Improper Inventory Management
+            </a>
+          </li>
+          <li>
+            <a href="/api10" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API10:<br> Unsafe Consumption of APIs
+            </a>
+
+        </ul>
+      </nav>
+    </div>
 
       <div class="col offset-3" id="main">
 
@@ -142,15 +143,38 @@
 
 
         <div class="container-fluid bg-light">
-          <h5>Mitigation:</h5>
-          <p>
-            Implement strong password hashing algorithms (like bcrypt) to protect stored credentials.
-            Enforce secure transmission protocols (HTTPS) to encrypt communication between the application and the
-            server.
-            Limit login attempts to prevent brute-force attacks.
-            Consider implementing multi-factor authentication (MFA) to add an extra layer of security during login.
-          </p>
+          <h2>Mitigation</h2>
+          <hr>
+          <ul>
+            <li>
+              <p>
+              Implement strong password hashing algorithms (like bcrypt) to protect stored credentials.
+              </p>
+            </li>
+            <li>
+              <p>
+                Enforce secure transmission protocols (HTTPS) to encrypt communication between the application and the server.
+              </p>
+            </li>
+            <li>
+              <p>
+               Limit login attempts to prevent brute-force attacks. 
+              </p>
+           </li>
+            <li>
+              <p>
+                 Consider implementing multi-factor authentication (MFA) to add an extra layer of security during login.
+              </p>
+            </li>
+          </ul>
         </div>
+
+        
+
+
+
+
+
       </div>
     </div>
   </div>

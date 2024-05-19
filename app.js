@@ -2,8 +2,8 @@ const express = require('express');
 const bodyParser = require("body-parser");
 const path = require('path');
 
-//const mongose = require('mongoose');
-//mongose.connect('mongodb+srv://yusuftalhaarabaci:qpEitl3p7ZLq41do@appgoat.aogk0vv.mongodb.net/?retryWrites=true&w=majority&appName=appgoat');
+const mongose = require('mongoose');
+mongose.connect('mongodb+srv://yusuftalhaarabaci:qpEitl3p7ZLq41do@appgoat.aogk0vv.mongodb.net/?retryWrites=true&w=majority&appName=appgoat');
 
 const api1handler = require('./api/API1/api1handler');
 const api2handler = require('./api/API2/api2handler');
@@ -46,7 +46,6 @@ app.get('/api', (req, res, next) => {
         message: "This is APIGOAT API"
     });
 })
-
 //not found middleware
 app.use((req, res, next) => {
     const error = new Error('Not Found');

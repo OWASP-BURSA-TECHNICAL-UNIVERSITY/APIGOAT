@@ -17,20 +17,22 @@
 </head>
 
 <body>
-  <h1>APIGOAT</h1>
-  <hr>
+
   <div class="container-fluid">
     <div class="row">
+
+      
       <div class="col-3 px-3 bg-light position-fixed" id="sticky-sidebar">
+        <img style="max-width: 100%" src="/logo" alt="apigoat"> 
         <nav>
-          <a href="#OWASP10_2023" data-toggle="collapse" aria-expanded="false" id="owasp10_2023"
+          <a href="/" aria-expanded="false" id="owasp10_2023"
             style="padding: 20% 10% 10 10">
             <i class="fas fa-flag"></i>
             OWASP API TOP 10 2023
           </a>
-
-
-          <ul id="OWASP10_2023">
+  
+  
+          <ul class="list-sidebar bg-default" id="OWASP10_2023">
             <li>
               <a href="api1" class="sidebar-list-items">
                 <i class="fas fa-bug"></i>
@@ -90,10 +92,11 @@
                 <i class="fas fa-bug"></i>
                 API10:<br> Unsafe Consumption of APIs
               </a>
-
+  
           </ul>
         </nav>
       </div>
+
       <div class="col offset-3" id="main">
         <h1>API9:2023 - Improper Inventory Management</h1>
         <hr>
@@ -122,7 +125,7 @@
             known to a small group within specific departments.
             No clear ownership or lifecycle management is established for these APIs.
           </p>
-          <h5>Attack Scenario-1:</h5>
+          <h5>Attack Scenario:</h5>
           <ol>
             <li>Internal Actor Negligence (Unintentional): A developer working on a new project stumbles upon an
               undocumented API endpoint while investigating the network traffic. Due to lack of documentation, the
@@ -136,19 +139,6 @@
                   issues or unexpected behavior in the new project.</li>
               </ul>
             </li>
-          </ol>
-
-          <h5>Attack Scenario-2:</h5>
-
-
-
-          <ol>
-            <li>Internal Actor Negligence (Malicious): An employee with malicious intent discovers an old, forgotten API
-              endpoint through network scanning or social engineering. There's no record of this API, and its
-              functionalities are unknown.</li>
-            <li>Exploiting a Shadow API: The malicious actor experiments with the forgotten API and discovers a
-              vulnerability due to its outdated nature. They exploit this vulnerability to gain unauthorized access to
-              sensitive data or functionalities within the organization's systems.</li>
           </ol>
 
           <h5>Impact:</h5>
@@ -166,16 +156,30 @@
         </div>
 
         <div class="container-fluid bg-light">
-          <h5>Mitigation:</h5>
-          <p>
-            Implement a centralized API registry to document all APIs, including their purpose, functionalities,
-            ownership, and access controls.
-            Enforce clear API lifecycle management practices, including development, deployment, versioning,
-            deprecation, and retirement of APIs.
-            Foster a culture of API awareness within the organization. Encourage developers to document their APIs and
-            report any undocumented APIs they encounter.
-            Regularly review and update the API inventory to ensure its accuracy and completeness.
-          </p>
+          <h2>Mitigation</h2>
+          <hr>
+          <ul>
+            <li>
+              <p>
+                Implement a centralized API registry to document all APIs, including their purpose, functionalities, ownership, and access controls.
+              </p>
+            </li>
+            <li>
+              <p>
+                Enforce clear API lifecycle management practices, including development, deployment, versioning, deprecation, and retirement of APIs.
+              </p>
+            </li>
+            <li>
+              <p>
+                Foster a culture of API awareness within the organization. Encourage developers to document their APIs and report any undocumented APIs they encounter.
+              </p>
+            </li>
+            <li>
+              <p>
+                Regularly review and update the API inventory to ensure its accuracy and completeness.
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
 

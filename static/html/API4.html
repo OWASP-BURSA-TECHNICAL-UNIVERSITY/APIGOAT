@@ -17,85 +17,84 @@
 </head>
 
 <body>
-  <h1>APIGOAT</h1>
-  <hr>
-  <div>
+  <div class="container-fluid">
+    <div class="row">
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-3 px-3 bg-light position-fixed" id="sticky-sidebar">
-          <nav>
-            <a href="#OWASP10_2023" data-toggle="collapse" aria-expanded="false" id="owasp10_2023"
-              style="padding: 20% 10% 10 10">
-              <i class="fas fa-flag"></i>
-              OWASP API TOP 10 2023
+  <div class="col-3 px-3 bg-light position-fixed" id="sticky-sidebar">
+      <img style="max-width: 100%" src="/logo" alt="apigoat"> 
+      <nav>
+        <a href="/" aria-expanded="false" id="owasp10_2023"
+          style="padding: 20% 10% 10 10">
+          <i class="fas fa-flag"></i>
+          OWASP API TOP 10 2023
+        </a>
+
+
+        <ul class="list-sidebar bg-default" id="OWASP10_2023">
+          <li>
+            <a href="api1" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API1:<br> Broken Object Level Authorization
+            </a>
+          </li>
+          <li>
+            <a href="api2" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API2:<br> Broken Authentication
+            </a>
+          </li>
+          <li>
+            <a href="/api3" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API3:<br> Broken Object Property Level Authorization
+            </a>
+          </li>
+          <li>
+            <a href="/api4" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API4<br>: Unrestricted Resource Consumption
+            </a>
+          </li>
+          <li>
+            <a href="/api5" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API5:<br> Broken Function Level Authorization
+            </a>
+          </li>
+          <li>
+            <a href="/api6" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API6:<br> Broken Function Level Authorization
+            </a>
+          </li>
+          <li>
+            <a href="/api7" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API7:<br> Server-Side Request Forgery
+            </a>
+          </li>
+          <li>
+            <a href="/api8" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API8:<br> Security Misconfiguration
+            </a>
+          </li>
+          <li>
+            <a href="/api9" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API9:<br> Improper Inventory Management
+            </a>
+          </li>
+          <li>
+            <a href="/api10" class="sidebar-list-items">
+              <i class="fas fa-bug"></i>
+              API10:<br> Unsafe Consumption of APIs
             </a>
 
+        </ul>
+      </nav>
+    </div>
 
-            <ul id="OWASP10_2023">
-              <li>
-                <a href="api1" class="sidebar-list-items">
-                  <i class="fas fa-bug"></i>
-                  API1:<br> Broken Object Level Authorization
-                </a>
-              </li>
-              <li>
-                <a href="api2" class="sidebar-list-items">
-                  <i class="fas fa-bug"></i>
-                  API2:<br> Broken Authentication
-                </a>
-              </li>
-              <li>
-                <a href="/api3" class="sidebar-list-items">
-                  <i class="fas fa-bug"></i>
-                  API3:<br> Broken Object Property Level Authorization
-                </a>
-              </li>
-              <li>
-                <a href="/api4" class="sidebar-list-items">
-                  <i class="fas fa-bug"></i>
-                  API4<br>: Unrestricted Resource Consumption
-                </a>
-              </li>
-              <li>
-                <a href="/api5" class="sidebar-list-items">
-                  <i class="fas fa-bug"></i>
-                  API5:<br> Broken Function Level Authorization
-                </a>
-              </li>
-              <li>
-                <a href="/api6" class="sidebar-list-items">
-                  <i class="fas fa-bug"></i>
-                  API6:<br> Broken Function Level Authorization
-                </a>
-              </li>
-              <li>
-                <a href="/api7" class="sidebar-list-items">
-                  <i class="fas fa-bug"></i>
-                  API7:<br> Server-Side Request Forgery
-                </a>
-              </li>
-              <li>
-                <a href="/api8" class="sidebar-list-items">
-                  <i class="fas fa-bug"></i>
-                  API8:<br> Security Misconfiguration
-                </a>
-              </li>
-              <li>
-                <a href="/api9" class="sidebar-list-items">
-                  <i class="fas fa-bug"></i>
-                  API9:<br> Improper Inventory Management
-                </a>
-              </li>
-              <li>
-                <a href="/api10" class="sidebar-list-items">
-                  <i class="fas fa-bug"></i>
-                  API10:<br> Unsafe Consumption of APIs
-                </a>
-
-            </ul>
-          </nav>
-        </div>
         <div class="col offset-3" id="main">
 
 
@@ -149,14 +148,25 @@
           </div>
 
           <div class="container-fluid bg-light">
-            <h5>Mitigation:</h5>
-            <p>
-              Implement limits on the number of products returned in search results. This can be achieved through
-              pagination, allowing users to browse results in smaller chunks.
-              Validate and sanitize user-provided search queries to prevent manipulation attempts.
-              Monitor API usage for suspicious activity and consider implementing rate limiting to throttle excessive
-              requests from a single source.
-            </p>
+            <h2>Mitigation</h2>
+            <hr>
+            <ul>
+              <li>
+                <p>
+                  Implement limits on the number of products returned in search results. This can be achieved through pagination, allowing users to browse results in smaller chunks.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Validate and sanitize user-provided search queries to prevent manipulation attempts.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Monitor API usage for suspicious activity and consider implementing rate limiting to throttle excessive requests from a single source.
+                </p>
+              </li>
+            </ul>
           </div>
 
         </div>

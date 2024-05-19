@@ -2,6 +2,11 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 
+router.get('/logo', (req, res, next) => {
+    res.status(404);
+    res.sendFile(path.join(__dirname, '../', 'static', 'img', 'logo.png'))  
+});
+
 router.get('/', (req, res, next) => {
     res.status(404);
     res.sendFile(path.join(__dirname, '../', 'static', 'html', 'index.html'))  

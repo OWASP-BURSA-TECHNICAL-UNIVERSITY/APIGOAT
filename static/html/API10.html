@@ -17,20 +17,21 @@
 </head>
 
 <body>
-  <h1>APIGOAT</h1>
-  <hr>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-3 px-3 bg-light position-fixed" id="sticky-sidebar">
+
+
+          <div class="col-3 px-3 bg-light position-fixed" id="sticky-sidebar">
+        <img style="max-width: 100%" src="/logo" alt="apigoat"> 
         <nav>
-          <a href="#OWASP10_2023" data-toggle="collapse" aria-expanded="false" id="owasp10_2023"
+          <a href="/" aria-expanded="false" id="owasp10_2023"
             style="padding: 20% 10% 10 10">
             <i class="fas fa-flag"></i>
             OWASP API TOP 10 2023
           </a>
-
-
-          <ul id="OWASP10_2023">
+  
+  
+          <ul class="list-sidebar bg-default" id="OWASP10_2023">
             <li>
               <a href="api1" class="sidebar-list-items">
                 <i class="fas fa-bug"></i>
@@ -90,10 +91,11 @@
                 <i class="fas fa-bug"></i>
                 API10:<br> Unsafe Consumption of APIs
               </a>
-
+  
           </ul>
         </nav>
       </div>
+      
       <div class="col offset-3" id="main">
         <h1>API10:2023 - Unsafe Consumption of APIs</h1>
         <hr>
@@ -139,18 +141,33 @@
               other systems on the user's device. </li>
           </ul>
         </div>
+        
         <div class="container-fluid bg-light"></div>
-        <h5>Mitigation:</h5>
-        <p>
-          API Client Libraries: Utilize well-maintained client libraries provided by the weather API provider. These
-          libraries often handle data parsing and validation securely.
-          Input Validation: Implement mechanisms within the mobile application to validate the data received from the
-          weather API. This could involve checking data types, expected formats, and removing unexpected elements.
-          Data Sanitization: Sanitize the received data to remove potentially harmful code or characters before using it
-          within the application.
-          Regular Updates: Keep the mobile application and its dependencies updated to address potential vulnerabilities
-          in the code or third-party libraries used.
-        </p>
+
+        <h2>Mitigation</h2>
+        <hr>
+        <ul>
+          <li>
+            <p>
+              <b>API Client Libraries: </b> Utilize well-maintained client libraries provided by the weather API provider. These libraries often handle data parsing and validation securely.
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>Input Validation:</b>  Implement mechanisms within the mobile application to validate the data received from the weather API. This could involve checking data types, expected formats, and removing unexpected elements.
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>Input Validation:</b>  Implement mechanisms within the mobile application to validate the data received from the weather API. This could involve checking data types, expected formats, and removing unexpected elements.
+            </p>
+          </li>
+          <li>
+            <p>
+              <b>Regular Updates:</b> Keep the mobile application and its dependencies updated to address potential vulnerabilities in the code or third-party libraries used.
+            </p>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
