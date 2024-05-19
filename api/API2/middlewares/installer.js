@@ -27,10 +27,10 @@ module.exports = (req, res, next) => {
             axios
             .post('http://localhost:3000/api/api2/signup', user2)
             .then(res => {
-                console.log("user2 cannot ceated");
+                console.log("user2  ceated");
             })
             .catch(err => {
-                console.error(err)
+                console.log("user2 cannot ceated");
             });
 
     } catch (error) {

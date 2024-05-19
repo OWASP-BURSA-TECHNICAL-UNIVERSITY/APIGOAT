@@ -27,7 +27,7 @@ router.get('/logins', logins, (req, res, next) => {
 
 
   
-// Vulnerable login endpoint (Broken Authentication)
+// Vunerable login endpoint (Broken Authentication)l
 router.post('/signup', (req, res, next) => {
   Account.find({email:req.body.email})
   .exec()
@@ -97,7 +97,7 @@ router.post("/login", (req, res, next) => {
               const token = jwt.sign({
                   email: accounts[0].email,
                   Id: accounts[0]._id
-              }, "api1", 
+              }, "api2", 
               {
                   expiresIn: "1h"
               })
