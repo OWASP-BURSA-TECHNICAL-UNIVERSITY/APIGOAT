@@ -1,6 +1,4 @@
 const axios = require('axios')
-const Account = require('../models/Account.js');
-const File = require('../models/File.js');
 const path = require('path');
 
 const user1 = {

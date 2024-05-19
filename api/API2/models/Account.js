@@ -8,4 +8,4 @@ const accountSchema = mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('Account1', accountSchema);
+module.exports = mongoose.model('Account2', accountSchema);
