@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require("body-parser");
 const path = require('path');
+const cors = require('cors'); // CORS middleware
+
 
 const mongose = require('mongoose');
 mongose.connect('mongodb+srv://yusuftalhaarabaci:qpEitl3p7ZLq41do@appgoat.aogk0vv.mongodb.net/?retryWrites=true&w=majority&appName=appgoat');
@@ -22,6 +24,9 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+
+// Permissive CORS policy (allowing all origins - BAD!)
+app.use(cors());
 
 //Index Routes
 const indexRoutesHandler = require('./utils/index');
@@ -64,7 +69,8 @@ app.use((error, req, res, next) =>{
 });
 
 
-app.listen(3000, ()=> {
-    console.log("listening on port 3000")
+app.listen(80, ()=> {
+    console.log("listening on port 80")
 });
 
+  

@@ -13,21 +13,31 @@ const user2 = {
 };
 
 const file1 = {
+    id: "1",
     name: 'secret_document',
     content: "Alice's secret document",
+    path: "/secret/doc"
     
 };
 
 const file2 = {
+    id: "2",
     name: "private_photos",
     content: "Bob's private photos" ,
     path: "/private/photos"
 }
 
+const file3 = {
+    id: "2",
+    name: "another_file",
+    content: "another's private library" ,
+    path: "/private/library"
+}
+
 module.exports = (req, res, next) => {
     try {
         axios
-            .post('http://localhost:3000/api/api1/signup', user1)
+            .post('http://localhost/api/api1/signup', user1)
             .then(res => {
                 console.log("user1 ceated");
             })
@@ -36,7 +46,7 @@ module.exports = (req, res, next) => {
             });
 
             axios
-            .post('http://localhost:3000/api/api1/signup', user2)
+            .post('http://localhost/api/api1/signup', user2)
             .then(res => {
                 console.log("user2 cannot ceated");
             })
@@ -45,7 +55,7 @@ module.exports = (req, res, next) => {
             });
 
             axios
-            .post('http:/http://localhost:3000/api/api1/files', file1)
+            .post('http://localhost/api/api1/files', file1)
             .then(res => {
                 console.log("file1 ceated");
             })
@@ -54,7 +64,7 @@ module.exports = (req, res, next) => {
             });
 
             axios
-            .post('http://localhost:3000/api/api1/files', file2)
+            .post('http://localhost/api/api1/files', file2)
             .then(res => {
                 console.log("file2 ceated");
             })
@@ -62,8 +72,16 @@ module.exports = (req, res, next) => {
                 console.error("file2 cannot ceated");
             });
 
+            axios
+            .post('http://localhost/api/api1/files', file3)
+            .then(res => {
+                console.log("file2 ceated");
+            })
+            .catch(err => {
+                console.error("file2 cannot ceated");
+            });
     } catch (error) {
-        console.log("already intalled");
+        console.log("already installed");
     }
     next();
 }

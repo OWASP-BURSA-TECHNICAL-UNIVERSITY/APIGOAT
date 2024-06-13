@@ -1,64 +1,57 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
+const Profile = require('./models/profile');
 
 //Not working!
 
+const p1 = { username: "username", name: "user1", email: "user@test.com" }
+const  p2 = { username: "admin", name: "jane", email:"jane@test.com" }
+const  p3 = { username: "user", name: "johny", email:"johny@test.com" }
+
+
 router.get('/', (req, res, next) => {
-  res.status(404);
-  res.json({
+  var p1p = new Profile({
+      username: p1.username, 
+      name: p1.name, 
+      email: p1.email});
+    p1p.save();
+  
+  var p2p = new Profile({
+    username: p2.username, 
+    name: p2.name, 
+    email: p2.email});
+  p2p.save();
+  
+  var p3p = new Profile({
+    username: p3.username, 
+    name: p3.name, 
+    email: p3.email});
+  p3p.save();
+
+  res.status(200).json({
     message: "API8 is working"
   });
 });
 
-// Placeholder for a third-party authentication library (assuming insecure default credentials - BAD!)
-const users = [
-  { username: "username", password: "passsword" },
-  { username: "admin", password: "admin" },
-  { username: "user", password: "1234" }
-];
-// ... insecure default credentials
-// Placeholder for sensitive data (like username/password
-//   // Insecure communication over plain HTTP (BAD!)
-//   const isValid = auth.authenticate(username, password); // Replace with secure authentication logic
-
-//   if (isValid) {
-//     // Placeholder for generating a token (replace with secure JWT generation)
-//     const token = 'fake-token';
-//     res.send({ token });
-//   } else {
-//     res.status(401).send('Invalid credentials'); // Potentially verbose error message (BAD!)
-//   }
-// });
 
 
-// Placeholder for a third-party authentication library (assuming insecure default credentials - BAD!)
-const auth = {
-  // ... insecure default credentials
-};
-
-// Placeholder for sensitive data (like username/password) in request body
-router.post('/login', (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
-
-  // Insecure communication over plain HTTP (BAD!)
-  const isValid = auth.authenticate(username, password); // Replace with secure authentication logic
-
-  if (isValid) {
-    // Placeholder for generating a token (replace with secure JWT generation)
-    const token = 'fake-token';
-    res.send({ token });
-  } else {
-    res.status(401).send('Invalid credentials: ' +  // Potentially verbose error message (BAD!)
-      (process.env.NODE_ENV !== 'production' ? auth.getErrorMessage(username) : '')); // Leak info in dev mode
-  }
+// Simulate a social media API endpoint (replace with actual logic)
+// Permissive CORS policy (allowing all origins - BAD!)
+router.get('/profiles/:user', (req, res) => {
+  user = req.params.user;
+  Profile.findOne({username: user})
+  .exec()
+  .then( (profile) =>{
+    res.status(200).json({
+      profile:profile
+    });
+  })
+  .catch( (err) =>{
+    res.status(500).json({
+      error: err
+    })
+  })
 });
 
-
-// Placeholder for exposed debugging endpoint (REMOVE in production!)
-router.get('/debug/info', (req, res) => {
-  res.send({ serverInfo: 'Internal server details' }); // Potentially sensitive information (BAD!)
-});
 
 module.exports = router;

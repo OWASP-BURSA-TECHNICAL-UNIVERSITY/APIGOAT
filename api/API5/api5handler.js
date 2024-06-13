@@ -8,7 +8,7 @@ const installer = require('./middlewares/installer');
 const checkAuth = require('./middlewares/check-auth');
 
 router.get('/', installer, (req, res, next) => {
-    res.status(404);
+    res.status(200);
     res.json({
         message:"API5 is working"
     });

@@ -132,8 +132,8 @@ router.delete('/:accountId',checkAuth, (req, res, next) => {
 
 // Vulnerable endpoint for downloading files (Broken Authorization)
 router.get('/files/:fileId', checkAuth, (req, res) => {
-    const id = req.params.fileId;
-    File.findById(id)
+    const fileid = req.params.fileId;
+    File.findOne({'number': fileid})
         .exec()
         .then(result => {
             if (result) {
@@ -148,12 +148,13 @@ router.get('/files/:fileId', checkAuth, (req, res) => {
         });
 });
 
-router.post('/files', checkAuth,  (req, res, next) => {
+router.post('/files',  (req, res, next) => {
     const file = new File({
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name,
         content: req.body.content,
-        path: req.body.path
+        path: req.body.path,
+        number: req.body.id
     });
     file
         .save()
@@ -176,7 +177,7 @@ router.post('/files', checkAuth,  (req, res, next) => {
 
 router.delete('files/:filesId', checkAuth, (req, res, next) => {
     const id = req.params.filesId;
-    File.deleteOne({ _id:id })
+    File.deleteOne({ "number":id })
         .exec()
         .then(result => {
             console.log("success")
@@ -195,7 +196,7 @@ router.patch('/:filesId', checkAuth, (req, res, next) => {
     for (const ops of req.body){
         updateOps[ops.propName] = ops.value;
     }
-    File.updateOne({ _id:id }, { $set: updateOps})
+    File.updateOne({ "number":id }, { $set: updateOps})
     .exec()
     .then(result => {
         console.log(result);
