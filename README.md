@@ -3,8 +3,8 @@
  Developed by OWASP Bursa Technical University Student Chapter
 
  it uses nodeJS runtime enviorment, ExpressJS Framework and mongoose ORM with mongoDB database.
- 
-<img width="1440" alt="2023" src="https://github.com/user-attachments/assets/44fd686d-edb4-4a18-942b-c6e366339475">
+
+<img width="1440" alt="logo" src="https://github.com/user-attachments/assets/579e1a51-d83b-41e4-8cc2-3cf1d4e2377a">
 
 
 ## Getting Started
